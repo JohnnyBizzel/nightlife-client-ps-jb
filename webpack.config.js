@@ -12,11 +12,12 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel',
                 query: {
                     presets: ['react', 'es2015','stage-1']       
                 }
-      }
+      },
+      { test: /\.css$/, loader: 'style-loader!css-loader'}
       // ,
       // {
       //   test: /\.scss$/,  // regex to select only .css files
@@ -45,6 +46,7 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './'
+    contentBase: './',
+    public: 'https://nightlife-client-bizzel.c9users.io'
   }
 };
